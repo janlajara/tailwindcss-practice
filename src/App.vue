@@ -1,12 +1,20 @@
 <template>
   <div>
-    <Header class="p-4 pt-6 border-b border-gray-300 sm:border-none">
-      <Hamburger @click="navExpanded = !navExpanded" 
-        class="sm:hidden"/>
-    </Header>
-    <Nav class="nav" :class="!navExpanded? 'h-0 sm:h-full': []"/>
-    <Body/>
-    <Footer/>
+    <Nav class="nav" :class="!navExpanded? [ 'hidden sm:block']: []">
+      <template v-slot:logo>
+        <Logo class="hidden p-4 sm:flex"/>
+      </template>
+    </Nav>
+    <div class="sm:ml-60 md:ml-72">
+      <Header class="flex h-16 p-4 justify-end border-b border-gray-300 bg-white">  
+        <Logo class="sm:hidden flex-grow"/>
+        <Notifications/>
+        <Hamburger :activated="navExpanded" @click="navExpanded = !navExpanded" class="sm:hidden"/>
+      </Header>
+      <Body>
+      </Body>
+      <Footer/>
+    </div>
   </div>
 </template>
 
@@ -18,12 +26,14 @@ import Header from '@/views/Header.vue'
 import Body from '@/views/Body.vue'
 import Footer from '@/views/Footer.vue'
 
+import Logo from '@/components/Logo.vue'
 import Hamburger from '@/components/Hamburger.vue'
+import Notifications from '@/components/Notifications.vue'
 
 export default {
   components: {
     Nav, Header, Body, Footer,
-    Hamburger
+    Logo, Hamburger, Notifications
   },
   setup(){
     const navExpanded = ref(false)
@@ -38,11 +48,16 @@ export default {
 @import "tailwindcss/utilities";
 
 @layer components {
+  html, body {
+    height: 100%;
+  }
+
   .nav {
-    @apply pl-6 pr-6;
-    @apply sm:absolute sm:left-0 sm:top-0;
-    @apply border-gray-300 sm:border-r; 
-    @apply w-full sm:w-60 sm:h-full sm:pt-6;
+    @apply pl-6 pr-6 pb-3 sm:pb-0;
+    @apply absolute top-16 sm:left-0 sm:top-0;
+    @apply bg-white;
+    @apply border-gray-300 border-b sm:border-r; 
+    @apply w-full sm:w-60 md:w-72 sm:h-full sm:pt-6;
     @apply overflow-hidden;
   }
 }

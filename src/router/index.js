@@ -11,7 +11,7 @@ const routes = [
   {
     path: '/components/buttons',
     name: 'Buttons',
-    component: Placeholder,
+    component: ()=>import('../views/pages/Buttons.vue'),
     meta: {group: 'components'}
   },
   {

@@ -1,5 +1,7 @@
 <template>
     <nav>
+        <slot name="logo"/>
+        <hr class="mt-3 hidden sm:flex"/>
         <NavLink :to="{name: 'Dashboard'}"
             icon="home"
             @click="selected = ''" class="nav-link">
