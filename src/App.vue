@@ -47,6 +47,17 @@ export default {
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+
+@layer base {
+  h1 {
+    @apply text-3xl font-extrabold;
+  }
+
+  h2 {
+    /*@apply text-gray-600 text-xl font-semibold;*/
+  }
+}
+
 @layer components {
   html, body {
     height: 100%;
