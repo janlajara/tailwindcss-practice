@@ -1,5 +1,5 @@
 <template>
-    <div class="w-10 flex">
+    <div class="flex">
         <FontAwesomeIcon v-if="$props.id" :icon="$props.id" class="m-auto" />
     </div>
 </template>

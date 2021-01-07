@@ -1,6 +1,6 @@
 <template>
     <button>
-        <Icon id="bell"/>
+        <Icon id="bell" class="w-8"/>
     </button>
 </template>
 

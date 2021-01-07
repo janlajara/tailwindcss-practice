@@ -1,7 +1,7 @@
 <template>
     <div> 
         <div class="flex items-center" @click.prevent="collapsed = !collapsed" >
-            <Icon :id="$props.icon" class="pr-4"/>
+            <Icon :id="$props.icon" class="pr-4 w-8"/>
             <a href="#" class="flex-grow">
                 <slot/>
             </a>

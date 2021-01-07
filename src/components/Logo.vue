@@ -1,6 +1,6 @@
 <template>
     <div class="flex justify-left m-auto">
-        <Icon id="drumstick-bite" class="text-yellow-500 transform -rotate-90 fa-2x"/>
+        <Icon id="drumstick-bite" class="w-10 text-yellow-500 transform -rotate-90 fa-2x"/>
         <span class="pl-1 font-serif text-xl sm:text-3xl italic font-bold">Shereps</span>
     </div>
 </template>

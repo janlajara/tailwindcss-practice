@@ -1,6 +1,6 @@
 <template>
     <button :class="$props.activated? 'bg-black rounded' : ''">
-        <Icon id="bars" :class="$props.activated? 'text-white': ''"/>
+        <Icon id="bars" class="w-10" :class="$props.activated? 'text-white': ''"/>
     </button>
 </template>
 <script>
