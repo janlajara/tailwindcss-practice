@@ -1,4 +1,5 @@
 <template>
-    <footer>
+    <footer class="bg-gray-100 py-8 px-8 md:px-16 text-center md:text-left">
+        <p class="text-sm text-gray-500">Copyright © Shereps 2021</p>
     </footer>
 </template>
