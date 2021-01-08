@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/components/forms',
     name: 'Forms',
-    component: Placeholder,
+    component: ()=>import('../views/pages/Forms.vue'),
     meta: {group: 'components'}
   },
   {

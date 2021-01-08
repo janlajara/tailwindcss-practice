@@ -13,7 +13,7 @@
       </Header>
       <Body>
       </Body>
-      <Footer class="absolute bottom-0 h-24 w-full"/>
+      <Footer class="w-full"/>
     </div>
   </div>
 </template>
