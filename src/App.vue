@@ -19,7 +19,8 @@
 </template>
 
 <script>
-import {ref} from 'vue'
+import {watch, ref} from 'vue'
+import {useRoute} from 'vue-router'
 
 import Nav from '@/views/Nav.vue'
 import Header from '@/views/Header.vue'
@@ -37,6 +38,12 @@ export default {
   },
   setup(){
     const navExpanded = ref(false)
+    const route = useRoute()
+
+    watch(()=> route.name,
+      ()=> {navExpanded.value = false}
+    )
+
     return {navExpanded}
   }
 }
@@ -59,13 +66,10 @@ export default {
 }
 
 @layer components {
-  html, body {
-    height: 100%;
-  }
 
   .nav {
     @apply pl-6 pr-6 pb-3 sm:pb-0;
-    @apply absolute top-16 sm:left-0 sm:top-0;
+    @apply absolute top-16 sm:left-0 sm:top-0 sm:bottom-0;
     @apply bg-white;
     @apply border-gray-300 border-b sm:border-r; 
     @apply w-full sm:w-60 md:w-72 sm:h-full sm:pt-6;
