@@ -24,6 +24,7 @@
                     </div>
                 </FieldSet>
             </Section>
+            <hr/>
             <Section heading="Terms and Conditions">
                 <InputCheckbox name="Read" option="read" label="I have read the everything."/>
                 <InputCheckbox name="Terms" option="agree" label="I agree to the terms and conditions.">
