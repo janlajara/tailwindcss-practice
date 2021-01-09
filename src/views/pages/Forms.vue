@@ -1,11 +1,34 @@
 <template>
     <div>
         <Page title="Forms">
-            <Section heading="Profile" >
-                <InputText name="Username" type="text" placeholder="abcd1234"/>
-                <InputText name="Price" type="number" prefix="PHP"/>
-                <InputText name="Quantity" type="number" postfix="pieces"/>
-                <InputText name="Website" type="text" prefix="www." postfix=".com"/>
+            <Section heading="Some Fields" description="Here are some fields that you can type on.">
+                <div class="grid sm:grid-cols-2 inputs">
+                    <InputText name="Username" type="text" placeholder="abcd1234"/>
+                    <InputText name="Price" type="number" prefix="PHP"/>
+                    <InputText name="Quantity" type="number" postfix="pieces"/>
+                    <InputText name="Website" type="text" prefix="www." postfix=".com"/>
+                    <InputTextarea name="Description"/>
+                </div>
+            </Section>
+            <Section heading="Files">
+                <InputSelect name="City" class="md:w-1/3"
+                    :options="[
+                        {label: 'Manila', value: 'MNL'},
+                        {label: 'Calamba', value: 'CLB'},
+                        {label: 'Lumban', value: 'LMB'}]"/>
+                <FieldSet name="Gender">
+                    <div class="flex">
+                        <InputRadio name="Gender" option="Male" />
+                        <InputRadio name="Gender" option="Female"/>
+                        <InputRadio name="Gender" option="Others"/>
+                    </div>
+                </FieldSet>
+            </Section>
+            <Section heading="Terms and Conditions">
+                <InputCheckbox name="Read" option="read" label="I have read the everything."/>
+                <InputCheckbox name="Terms" option="agree" label="I agree to the terms and conditions.">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                </InputCheckbox>
             </Section>
         </Page>
     </div>
@@ -15,10 +38,28 @@
 import Page from '@/components/Page.vue'
 import Section from '@/components/Section.vue'
 import InputText from '@/components/InputText.vue'
+import InputTextarea from '@/components/InputTextarea.vue'
+import InputSelect from '@/components/InputSelect.vue'
+import InputRadio from '@/components/InputRadio.vue'
+import InputCheckbox from '@/components/InputCheckbox.vue'
+import FieldSet from '@/components/FieldSet.vue'
 
 export default {
     components: {
-        Page, Section, InputText
+        Page, Section, InputText, InputTextarea, InputSelect,
+        InputRadio, InputCheckbox, FieldSet
     }
 }
 </script>
+
+<style scoped>
+@layer components {
+    .inputs > *:nth-child(odd) {
+        @apply md:mr-2;
+    }
+
+    .inputs > *:nth-child(even) {
+        @apply md:ml-2;
+    }
+}
+</style>
