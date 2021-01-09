@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <label class="text-sm font-medium text-gray-700">{{$props.name}}</label>
+    <div class="input">
+        <label class="input-label">{{$props.name}}</label>
         <div class="flex rounded-md shadow-sm">
             <span v-if="$props.prefix"
                 class="inline-flex items-center px-2 bg-gray-50 border border-r-0 border-gray-300 rounded-l-md text-sm">
                 {{$props.prefix}}</span>
             <input :type="$props.type" :placeholder="$props.placeholder"
-                class="w-full border-gray-300 text-sm"
+                class="input-field"
                 :class="inputBorderStyle"/>
             <span v-if="$props.postfix"
                 class="inline-flex items-center px-2 bg-gray-50 border border-l-0 border-gray-300 rounded-r-md text-sm">
