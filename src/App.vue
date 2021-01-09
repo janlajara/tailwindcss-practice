@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <Nav class="nav" :class="!navExpanded? [ 'hidden sm:block']: []">
+  <div class="flex min-h-full">
+    <Nav class="nav flex-none" :class="!navExpanded? [ 'hidden sm:block']: []">
       <template v-slot:logo>
         <Logo class="hidden p-4 sm:flex"/>
       </template>
     </Nav>
-    <div class="sm:ml-60 md:ml-72">
+    <div class="flex-grow">
       <Header class="flex h-16 p-4 justify-end border-b border-gray-300 bg-white">  
         <Logo class="sm:hidden flex-grow"/>
         <Notifications/>
@@ -56,6 +56,14 @@ export default {
 
 
 @layer base {
+  html, body, div#app {
+    @apply h-full;
+  }
+
+  body, div#app {
+    /*@apply relative;*/
+  }
+
   h1 {
     @apply text-3xl font-extrabold;
   }
@@ -69,11 +77,23 @@ export default {
 
   .nav {
     @apply pl-6 pr-6 pb-3 sm:pb-0;
-    @apply absolute top-16 sm:left-0 sm:top-0 sm:bottom-0;
+    @apply absolute top-16 sm:static;
     @apply bg-white;
     @apply border-gray-300 border-b sm:border-r; 
-    @apply w-full sm:w-60 md:w-72 sm:h-full sm:pt-6;
+    @apply w-full sm:w-60 md:w-72 sm:pt-6;
     @apply overflow-hidden;
+  }
+
+  .input {
+    @apply mt-2;
+  }
+
+  .input-label {
+    @apply text-sm font-medium text-gray-700;
+  }
+
+  .input-field {
+    @apply w-full border-gray-300 text-sm;
   }
 }
 </style>
