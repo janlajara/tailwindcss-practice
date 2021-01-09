@@ -6,7 +6,7 @@
         </div>
         <div>
             <label class="input-label">{{$props.label}}</label>
-            <p v-if="$slots.default" class="text-sm font-medium text-justify">
+            <p v-if="$slots.default" class="text-sm font-medium text-justify text-gray-500">
                 <slot/>
             </p>
         </div>
