@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-8 py-4 md:mx-16 md:py-8">
+    <div class="mx-8 py-6 md:mx-16 md:py-8">
         <h1>{{$props.title}}</h1>
         <slot/>
     </div>
