@@ -23,7 +23,7 @@ const routes = [
   {
     path: '/components/tables',
     name: 'Tables',
-    component: Placeholder,
+    component: ()=>import('../views/pages/Tables.vue'),
     meta: {group: 'components'}
   },
   {
