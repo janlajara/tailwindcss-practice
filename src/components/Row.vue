@@ -1,3 +1,3 @@
 <template>
-    <tr><slot/></tr>
+    <tr class="hover:bg-gray-50"><slot/></tr>
 </template>

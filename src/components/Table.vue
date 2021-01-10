@@ -1,6 +1,6 @@
 <template>
     <div class="my-4 border border-gray-300 rounded-md overflow-hidden">
-        <table class="min-w-full divide-y divide-gray-200">
+        <table class="min-w-full divide-y divide-gray-200 table-auto">
             <thead class="bg-gray-50">
                 <Row>
                     <th v-for="(header, key) in $props.headers" :key="key" 
