@@ -29,7 +29,7 @@ const routes = [
   {
     path: '/components/tabs',
     name: 'Tabs',
-    component: Placeholder,
+    component: ()=>import('../views/pages/TabsPage.vue'),
     meta: {group: 'components'}
   },
   {
