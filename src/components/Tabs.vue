@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ul class="flex border-gray-300 border-b mb-8">
+        <ul class="border-gray-300 border-b mb-6 hidden sm:flex">
             <li v-for="(tab, index) in tabs" :key="index"
                 @click="selectTab(index)"
                 class="tab cursor-pointer" 
@@ -8,6 +8,15 @@
                 {{tab.props.title}}
             </li>
         </ul>
+
+        <div class="border-yellow-400 border-b-2 sm:hidden my-4">
+            <select v-model="selectedIndex" 
+                class="w-full border-gray-300 border-b-0 pl-0">
+                <option v-for="(tab, index) in tabs" :key="index" :value="index">
+                    {{tab.props.title}}
+                </option>
+            </select>
+        </div>
         <slot/>
     </div>
 </template>
