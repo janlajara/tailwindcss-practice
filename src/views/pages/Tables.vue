@@ -8,7 +8,7 @@
                             ['Lahara', 'John Eli', 'Mamarunong', 18],]"/>
             </Section>
             <Section heading="Other Format" 
-                description="Here is an example of a table in another layout.">
+                description="Here is an example of a table with another layout.">
                 <Table 
                     :headers="['Select', 'Record', 'Description', 'Quantity', '']">
                     <Row v-for="(count, key) in 3" :key="key">
