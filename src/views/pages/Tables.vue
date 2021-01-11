@@ -7,8 +7,8 @@
                     :rows="[['Lajara', 'Jan Eleazar', 'Mamonong', 32],
                             ['Lahara', 'John Eli', 'Mamarunong', 18],]"/>
             </Section>
-            <Section heading="Interactive" 
-                description="Here is an example of a table with interactive layout.">
+            <Section heading="Other Format" 
+                description="Here is an example of a table in another layout.">
                 <Table 
                     :headers="['Select', 'Record', 'Description', 'Quantity', '']">
                     <Row v-for="(count, key) in 3" :key="key">
