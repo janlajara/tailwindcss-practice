@@ -5,7 +5,7 @@
                 <Table 
                     :headers="['Last name', 'First name', 'Middle name', 'Age']"
                     :rows="[['Lajara', 'Jan Eleazar', 'Mamonong', 32],
-                            ['Lahara', 'John Eli', 'Mamarunong', 18],]"/>
+                            ['Laranja', 'Janelli', 'Azar', 18],]"/>
             </Section>
             <Section heading="Other Format" 
                 description="Here is an example of a table with another layout.">
@@ -13,7 +13,7 @@
                     :headers="['Select', 'Record', 'Description', 'Quantity', '']">
                     <Row v-for="(count, key) in 3" :key="key">
                         <Cell>
-                            <InputCheckbox name="row" :option="count"/>    
+                            <InputCheckbox name="row" :option="'option-'+count"/>    
                         </Cell>
                         <Cell>Some Record</Cell>
                         <Cell>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Cell>
