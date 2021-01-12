@@ -9,13 +9,13 @@
         <hr/>
         <NavGroup name="Interface">
             <NavMenu
-                icon="cog"
+                icon="extension"
                 @click="selected = 'components'" 
                 :selected="selected"
                 meta="components" class="nav-link">
                 Components</NavMenu>
             <NavMenu
-                icon="file-alt"
+                icon="web"
                 @click="selected = 'pages'" 
                 :selected="selected"
                 meta="pages" class="nav-link">
@@ -29,10 +29,6 @@ import {ref} from 'vue'
 import NavGroup from '@/components/NavGroup.vue'
 import NavMenu from '@/components/NavMenu.vue'
 import NavLink from '@/components/NavLink.vue'
-
-import {library} from '@fortawesome/fontawesome-svg-core'
-import {faHome, faCog, faFileAlt} from '@fortawesome/free-solid-svg-icons'
-library.add(faHome, faCog, faFileAlt)
 
 export default {
     components: {
