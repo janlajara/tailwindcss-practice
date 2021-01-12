@@ -1,18 +1,14 @@
 <template>
     <div class="flex">
-        <FontAwesomeIcon v-if="$props.id" :icon="$props.id" class="m-auto" />
+        <span class="material-icons text-base m-auto">{{$props.id}}</span>
     </div>
 </template>
 
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 export default {
     props: {
         id: String
-    },
-    components: {
-        FontAwesomeIcon
     }
 }
 </script>

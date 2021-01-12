@@ -1,18 +1,18 @@
 <template>
     <div> 
         <div class="flex items-center" @click.prevent="collapsed = !collapsed" >
-            <Icon :id="$props.icon" class="pr-4 w-8"/>
+            <Icon :id="$props.icon" class="pr-4 w-8 text-gray-400"/>
             <a href="#" class="flex-grow">
                 <slot/>
             </a>
-            <Icon id="chevron-down" class="transform text-gray-400" 
+            <Icon id="expand_more" class="transform text-gray-400" 
                 :class="collapsed? '' : 'rotate-90'"/>
         </div>
         <div ref="navLinks"
             class="flex flex-col overflow-hidden transition-height duration-100 ease-out"
             :style="height? {height: `${collapsed? height:0}px`}: {}" >
             <NavLink :to="{name: route.name}" v-for="(route, i) in group" :key="i"
-                class="mt-2.5">
+                class="mt-2.5 text-sm">
                 {{route.name}}
             </NavLink>
         </div>
@@ -24,10 +24,6 @@ import {ref, onMounted, watch} from 'vue'
 import {useRouter} from 'vue-router'
 import NavLink from '@/components/NavLink.vue'
 import Icon from '@/components/Icon.vue'
-
-import {library} from '@fortawesome/fontawesome-svg-core'
-import {faChevronDown} from '@fortawesome/free-solid-svg-icons'
-library.add(faChevronDown)
 
 export default {
     props: {

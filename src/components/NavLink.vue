@@ -1,6 +1,6 @@
 <template>
     <div class="flex items-center">
-        <Icon :id="$props.icon" class="pr-4 w-8"/>
+        <Icon :id="$props.icon" class="pr-4 w-8 text-gray-400"/>
         <router-link v-bind="$props">
             <slot/>
         </router-link>  

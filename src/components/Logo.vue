@@ -1,19 +1,6 @@
 <template>
     <div class="flex justify-left m-auto">
-        <Icon id="drumstick-bite" class="w-10 text-yellow-500 transform -rotate-90 fa-2x"/>
-        <span class="pl-1 font-serif text-xl sm:text-3xl italic font-bold">Shereps</span>
+        <span class="material-icons text-yellow-500 w-10 text-center sm:text-3xl">tapas</span>
+        <span class="flex-grow font-serif text-xl sm:text-3xl italic font-bold">Shereps</span>
     </div>
 </template>
-
-<script>
-import Icon from '@/components/Icon.vue'
-import {library} from '@fortawesome/fontawesome-svg-core'
-import {faDrumstickBite} from '@fortawesome/free-solid-svg-icons'
-library.add(faDrumstickBite)
-
-export default {
-    components: {
-        Icon
-    }
-}
-</script>
