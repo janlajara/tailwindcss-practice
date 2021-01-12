@@ -10,13 +10,13 @@
         <NavGroup name="Interface">
             <NavMenu
                 icon="extension"
-                @click="selected = 'components'" 
+                @selected="select" 
                 :selected="selected"
                 meta="components" class="nav-link">
                 Components</NavMenu>
             <NavMenu
                 icon="web"
-                @click="selected = 'pages'" 
+                @selected="select" 
                 :selected="selected"
                 meta="pages" class="nav-link">
                 Pages</NavMenu>
@@ -36,8 +36,11 @@ export default {
     },
     setup() {
         const selected = ref()
+        const select = (value) => {
+            selected.value = value
+        }
         return {
-            selected
+            selected, select
         }
     }
 }

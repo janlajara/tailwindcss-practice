@@ -1,7 +1,7 @@
 <template>
-    <div class="flex items-center">
+    <div class="flex items-center cursor-pointer">
         <Icon :id="$props.icon" class="pr-4 w-8 text-gray-400"/>
-        <router-link v-bind="$props">
+        <router-link v-bind="$props" class="w-full">
             <slot/>
         </router-link>  
     </div>

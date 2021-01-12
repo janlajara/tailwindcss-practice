@@ -1,8 +1,11 @@
 <template>
     <div> 
-        <div class="flex items-center" @click.prevent="collapsed = !collapsed" >
-            <Icon :id="$props.icon" class="pr-4 w-8 text-gray-400"/>
-            <a href="#" class="flex-grow">
+        <div class="flex items-center" >
+            <Icon :id="$props.icon" class="pr-4 w-8" 
+                :class="collapsed? 'text-yellow-500' : 'text-gray-400'"/>
+            <a href="#" class="flex-grow" 
+                @click.prevent="$emit('selected', $props.meta)"
+                :class="collapsed? 'text-yellow-500 font-bold' : ''">
                 <slot/>
             </a>
             <Icon id="expand_more" class="transform text-gray-400" 
@@ -12,7 +15,7 @@
             class="flex flex-col overflow-hidden transition-height duration-100 ease-out"
             :style="height? {height: `${collapsed? height:0}px`}: {}" >
             <NavLink :to="{name: route.name}" v-for="(route, i) in group" :key="i"
-                class="mt-2.5 text-sm">
+                class="mt-3 text-sm" :class="$route.name == route.name? 'text-yellow-500' : ''">
                 {{route.name}}
             </NavLink>
         </div>
@@ -20,7 +23,7 @@
 </template>
 
 <script>
-import {ref, onMounted, watch} from 'vue'
+import {ref, onMounted, computed} from 'vue'
 import {useRouter} from 'vue-router'
 import NavLink from '@/components/NavLink.vue'
 import Icon from '@/components/Icon.vue'
@@ -35,15 +38,10 @@ export default {
         NavLink, Icon
     },
     setup(props) {
-        const router = useRouter()
-        const routes = router.getRoutes()
+        const routes = useRouter().getRoutes()
         const navLinks = ref()
         const height = ref()
-        const collapsed = ref(false)
-        
-        watch(()=> props.selected,
-            () => collapsed.value = props.selected == props.meta
-        )
+        const collapsed = computed(()=> props.selected == props.meta)
 
         onMounted(()=> {
             height.value = navLinks.value.clientHeight
