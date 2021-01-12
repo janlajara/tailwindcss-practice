@@ -4,7 +4,7 @@
             <li v-for="(tab, index) in tabs" :key="index"
                 @click="selectTab(index)"
                 class="tab cursor-pointer" 
-                :class="index === selectedIndex? 'border-yellow-400 border-b-2' : ''">
+                :class="index === selectedIndex? 'text-yellow-600 border-yellow-400 border-b-2' : ''">
                 {{tab.props.title}}
             </li>
         </ul>
