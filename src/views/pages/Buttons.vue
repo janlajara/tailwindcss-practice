@@ -16,13 +16,13 @@
                 class="sm:flex">
                 <div id="buttons-group" class="flex flex-grow flex-wrap justify-center my-auto">
                     <Button type="primary">
-                        Kagat!<template v-slot:icon><Icon id="drumstick-bite" class="w-6"/></template>
+                        Kagat!<template v-slot:icon><Icon id="restaurant" class="w-6 text-sm"/></template>
                     </Button>
                     <Button type="secondary">
-                        Download<template v-slot:icon><Icon id="download" class="w-6"/></template>
+                        Download<template v-slot:icon><Icon id="download" class="w-6 text-xs"/></template>
                     </Button>
                     <Button type="secondary">
-                        Delete<template v-slot:icon><Icon id="times" class="w-6"/></template>
+                        Delete<template v-slot:icon><Icon id="close" class="w-6 text-xs"/></template>
                     </Button>
                 </div>
             </Section>
@@ -36,9 +36,6 @@ import Section from '@/components/Section.vue'
 import Button from '@/components/Button.vue'
 
 import Icon from '@/components/Icon.vue'
-import {library} from '@fortawesome/fontawesome-svg-core'
-import {faDrumstickBite, faDownload, faTimes} from '@fortawesome/free-solid-svg-icons'
-library.add(faDrumstickBite, faDownload, faTimes)
 
 export default {
     components: {
