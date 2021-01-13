@@ -3,9 +3,9 @@
         <Page title="Tables">
             <Section heading="Regular" description="Here is an example of a regular table.">
                 <Table 
-                    :headers="['Last name', 'First name', 'Middle name', 'Age']"
-                    :rows="[['Lajara', 'Jan Eleazar', 'Mamonong', 32],
-                            ['Laranja', 'Janelli', 'Azar', 18],]"/>
+                    :headers="['Last name', 'First name', 'Middle name', 'Age', 'Profile']"
+                    :rows="[['Lajara', 'Jan Eleazar', 'Mamonong', 32, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'],
+                            ['Laranja', 'Janelli', 'Azar', 18, 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.']]"/>
             </Section>
             <Section heading="Other Format" 
                 description="Here is an example of a table with another layout.">

@@ -2,7 +2,7 @@
     <div>
         <Page title="Forms">
             <Section heading="Some Fields" description="Here are some fields that you can type on.">
-                <div class="grid sm:grid-cols-2 inputs">
+                <div class="grid lg:grid-cols-2 inputs">
                     <InputText name="Username" type="text" placeholder="abcd1234"/>
                     <InputText name="Price" type="number" prefix="PHP"/>
                     <InputText name="Quantity" type="number" postfix="pieces"/>
@@ -56,11 +56,11 @@ export default {
 <style scoped>
 @layer components {
     .inputs > *:nth-child(odd) {
-        @apply md:mr-2;
+        @apply lg:mr-2;
     }
 
     .inputs > *:nth-child(even) {
-        @apply md:ml-2;
+        @apply lg:ml-2;
     }
 }
 </style>

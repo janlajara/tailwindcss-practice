@@ -80,7 +80,7 @@ export default {
     @apply absolute top-16 sm:static;
     @apply bg-white;
     @apply border-gray-300 border-b sm:border-r; 
-    @apply w-full sm:w-60 md:w-72 sm:pt-6;
+    @apply w-full sm:w-60 md:w-64 lg:w-72 sm:pt-6;
     @apply overflow-hidden;
   }
 
