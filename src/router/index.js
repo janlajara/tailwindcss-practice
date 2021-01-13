@@ -12,49 +12,49 @@ const routes = [
     path: '/components/buttons',
     name: 'Buttons',
     component: ()=>import('../views/pages/Buttons.vue'),
-    meta: {group: 'components'}
+    meta: {group: 'Components'}
   },
   {
     path: '/components/forms',
     name: 'Forms',
     component: ()=>import('../views/pages/Forms.vue'),
-    meta: {group: 'components'}
+    meta: {group: 'Components'}
   },
   {
     path: '/components/tables',
     name: 'Tables',
     component: ()=>import('../views/pages/Tables.vue'),
-    meta: {group: 'components'}
+    meta: {group: 'Components'}
   },
   {
     path: '/components/tabs',
     name: 'Tabs',
     component: ()=>import('../views/pages/TabsPage.vue'),
-    meta: {group: 'components'}
+    meta: {group: 'Components'}
   },
   {
     path: '/components/notifications',
     name: 'Notifications',
-    component: Placeholder,
-    meta: {group: 'components'}
+    component: ()=>import('../views/pages/Notifications.vue'),
+    meta: {group: 'Components'}
   },
   {
     path: '/pages/login',
     name: 'Login',
     component: Placeholder,
-    meta: {group: 'pages'}
+    meta: {group: 'Pages'}
   },
   {
     path: '/pages/unauthorized',
     name: 'Unauthorized Access',
     component: Placeholder,
-    meta: {group: 'pages'}
+    meta: {group: 'Pages'}
   },
   {
     path: '/pages/404',
     name: 'Not Found',
     component: Placeholder,
-    meta: {group: 'pages'}
+    meta: {group: 'Pages'}
   }
 ]
 
