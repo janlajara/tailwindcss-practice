@@ -4,7 +4,8 @@
         <hr class="mt-3 hidden sm:flex"/>
         <NavLink :to="{name: 'Dashboard'}"
             icon="home"
-            @click="selected = ''" class="nav-link">
+            @selected="select" 
+            :selected="selected" class="nav-link">
             Home</NavLink>
         <hr/>
         <NavGroup name="Interface">
@@ -12,13 +13,13 @@
                 icon="extension"
                 @selected="select" 
                 :selected="selected"
-                meta="components" class="nav-link">
+                meta-group="Components" class="nav-link">
                 Components</NavMenu>
             <NavMenu
                 icon="web"
                 @selected="select" 
                 :selected="selected"
-                meta="pages" class="nav-link">
+                meta-group="Pages" class="nav-link">
                 Pages</NavMenu>
         </NavGroup>
     </nav>

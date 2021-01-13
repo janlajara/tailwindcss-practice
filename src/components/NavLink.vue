@@ -1,23 +1,51 @@
 <template>
-    <div class="flex items-center cursor-pointer">
-        <Icon :id="$props.icon" class="pr-4 w-8 text-gray-400"/>
-        <router-link v-bind="$props" class="w-full">
+    <div class="flex items-center cursor-pointer" @click="emitSelected">
+        <Icon :id="$props.icon" class="pr-4 w-8 text-gray-400"
+            :class="isSelected? 'text-yellow-500' : ''"/>
+        <router-link v-bind="$props" class="w-full"
+            :class="isSelected? 'text-yellow-500 font-bold' : ''">
             <slot/>
         </router-link>  
     </div>
 </template>
 
 <script>
-import {RouterLink} from 'vue-router'
+import {computed, watch} from 'vue'
+import {useRoute, useRouter, RouterLink} from 'vue-router'
 import Icon from '@/components/Icon.vue'
 
 export default {
     props: {
         ...RouterLink.props,
-        icon: String
+        icon: String,
+        selected: String
     },
+    emits: ['selected'],
     components: {
         Icon
+    },
+    setup(props, {emit}){
+        const isSelected = computed(()=> props.selected == props.to.name)
+        const currentRoute = useRoute()
+        const routes = useRouter().getRoutes()
+        const linkRoute = routes.filter(
+            route => route.name == props.to.name && route.meta.group == null)
+        const emitSelected = () => {
+            if (linkRoute[0])
+                emit('selected', props.to.name)
+        }
+
+        watch(()=> currentRoute.name, 
+            ()=> {
+                if (currentRoute.name == props.to.name)
+                    emitSelected()
+            }
+        )
+
+        return {
+            emitSelected,
+            isSelected
+        }
     }
 }
 </script>
