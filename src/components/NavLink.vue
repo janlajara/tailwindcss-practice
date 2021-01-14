@@ -1,8 +1,8 @@
 <template>
-    <div class="flex items-center cursor-pointer" @click="emitSelected">
+    <div class="flex items-center cursor-pointer">
         <Icon :id="$props.icon" class="pr-4 w-8 text-gray-400"
             :class="isSelected? 'text-yellow-500' : ''"/>
-        <router-link v-bind="$props" class="w-full"
+        <router-link v-bind="$props" class="w-full" @click="emitSelected"
             :class="isSelected? 'text-yellow-500 font-bold' : ''">
             <slot/>
         </router-link>  
