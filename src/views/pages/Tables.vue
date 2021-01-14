@@ -10,15 +10,14 @@
             <Section heading="Other Format" 
                 description="Here is an example of a table with another layout.">
                 <Table 
-                    :headers="['Select', 'Record', 'Description', 'Quantity', '']">
+                    :headers="['Select', 'Record', 'Description', 'Quantity']">
                     <Row v-for="(count, key) in 3" :key="key">
-                        <Cell>
+                        <Cell label="Select">
                             <InputCheckbox name="row" :option="'option-'+count"/>    
                         </Cell>
-                        <Cell>Some Record</Cell>
-                        <Cell>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Cell>
-                        <Cell>{{count*11}}</Cell>
-                        <Cell>Edit</Cell>
+                        <Cell label="Record">Some Record</Cell>
+                        <Cell label="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Cell>
+                        <Cell label="Quantity">{{count*11}}</Cell>
                     </Row>
                 </Table>
             </Section>

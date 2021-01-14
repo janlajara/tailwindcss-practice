@@ -9,12 +9,10 @@
                 </Row>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-                <Row v-for="(row, key1) in $props.rows" :key="key1"
-                    class="flex flex-wrap lg:table-row row hover:bg-gray-50">
+                <Row v-for="(row, key1) in $props.rows" :key="key1">
                     <Cell  v-for="(col, key2) in row.splice(0, columnCount)" 
-                        :key="key2" class="block lg:table-cell">
-                        <label class="font-bold text-xs block lg:hidden">{{$props.headers[key2]}}</label>
-                        <span>{{col}}</span>
+                        :key="key2" :label="$props.headers[key2]">
+                        {{col}}
                     </Cell>
                 </Row>
                 <slot/>
@@ -24,7 +22,7 @@
 </template>
 
 <script>
-import {computed} from 'vue'
+import {computed, ref} from 'vue'
 import Row from '@/components/Row.vue'
 import Cell from '@/components/Cell.vue'
 
@@ -39,10 +37,20 @@ export default {
         },
         rows: Array
     },
-    setup(props){
+    setup(props, {slots}){
         const columnCount = computed(()=> props.headers.length)
+        const tableRows = ref([])
+
+        if (slots.default) {
+            const slotRows = slots.default()[0].children
+                .filter(x => x.type.name == 'Row')
+                .map( row => row )
+            console.log(slotRows)
+        } 
+
         return {
-            columnCount
+            columnCount,
+            tableRows
         }
     }
 }
