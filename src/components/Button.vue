@@ -16,7 +16,11 @@ export default {
         type: String,
             validator: (value) => {
                 return ['primary', 'secondary'].indexOf(value) !== -1
-            }
+            },
+        action: {
+            type: Function,
+            required: false
+        }
     },
     setup(props) { 
         return { 
