@@ -1,5 +1,6 @@
 <template>
-    <button class="flex px-3 py-1 font-bold rounded border" :class="buttonClass">
+    <button @click="$props.action"
+        class="flex px-3 py-1 font-bold rounded border" :class="buttonClass">
         <slot name="icon"/>
         <slot/>
     </button>
