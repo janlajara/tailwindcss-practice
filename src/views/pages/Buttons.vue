@@ -15,15 +15,9 @@
                 description="Here are the samples of buttons with icon in various styles."
                 class="sm:flex">
                 <div class="buttons-group flex flex-grow flex-wrap justify-center my-auto">
-                    <Button type="primary">
-                        Kagat!<template v-slot:icon><Icon id="restaurant" class="w-6 text-sm"/></template>
-                    </Button>
-                    <Button type="secondary">
-                        Download<template v-slot:icon><Icon id="download" class="w-6 text-xs"/></template>
-                    </Button>
-                    <Button type="secondary">
-                        Delete<template v-slot:icon><Icon id="close" class="w-6 text-xs"/></template>
-                    </Button>
+                    <Button type="primary" icon="restaurant">Kagat!</Button>
+                    <Button type="secondary" icon="download">Download</Button>
+                    <Button type="secondary" icon="close">Delete</Button>
                 </div>
             </Section>
         </Page>
@@ -35,11 +29,9 @@ import Page from '@/components/Page.vue'
 import Section from '@/components/Section.vue'
 import Button from '@/components/Button.vue'
 
-import Icon from '@/components/Icon.vue'
-
 export default {
     components: {
-        Page, Section, Button, Icon
+        Page, Section, Button
     }
 }
 </script>
