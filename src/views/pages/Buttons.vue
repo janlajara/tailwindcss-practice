@@ -4,7 +4,7 @@
             <Section heading="Regular Buttons"
                 description="Here are the samples of regular buttons in various styles."
                 class="sm:flex">
-                <div id="buttons-group" class="flex flex-grow flex-wrap justify-center my-auto">
+                <div class="buttons-group flex flex-grow flex-wrap justify-center my-auto">
                     <Button type="primary">Primary</Button>
                     <Button type="primary">Orange Button</Button>
                     <Button type="secondary">Secondary</Button>
@@ -14,7 +14,7 @@
             <Section heading="Buttons with Icon"
                 description="Here are the samples of buttons with icon in various styles."
                 class="sm:flex">
-                <div id="buttons-group" class="flex flex-grow flex-wrap justify-center my-auto">
+                <div class="buttons-group flex flex-grow flex-wrap justify-center my-auto">
                     <Button type="primary">
                         Kagat!<template v-slot:icon><Icon id="restaurant" class="w-6 text-sm"/></template>
                     </Button>
@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style scoped>
-#buttons-group button {
+.buttons-group button {
     @apply m-2;
 }
 </style>
