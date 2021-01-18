@@ -1,7 +1,7 @@
 <template>
     <button @click="$props.action"
         class="flex px-3 py-1 font-bold rounded border" :class="buttonClass">
-        <Icon v-if="$props.icon" id="restaurant" class="w-6 text-sm"/>
+        <Icon v-if="$props.icon" :id="$props.icon" class="w-6 text-sm"/>
         <slot/>
     </button>
 </template>
