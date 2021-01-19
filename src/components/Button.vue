@@ -1,5 +1,6 @@
 <template>
-    <button @click="$props.action" :title="$refs.buttonText.innerHTML"
+    <button @click="$props.action" 
+        :title="$refs.buttonText? $refs.buttonText.innerHTML : ''"
         class="flex px-3 py-1 font-bold border" 
         :class="[buttonClass, $props.icon? 'rounded-full sm:rounded' : 'rounded']">
         <Icon v-if="$props.icon" :id="$props.icon" class="w-6 text-sm"/>
