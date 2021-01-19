@@ -11,8 +11,14 @@
                 <div class="modal-body pb-6 pb-12 h-96 overflow-y-auto">
                     <slot/>
                 </div>
-                <footer class="modal-footer border-t">
-                    Footer goes here.
+                <footer class="modal-footer border-t justify-end flex-wrap">
+                    <Button v-for="(button, index) in $props.buttons" 
+                        :key="index" :type="button.type" 
+                        :icon="button.icon" :action="button.action" 
+                        class="modal-button">
+                        {{button.text}}
+                    </Button>
+                    <Button type="secondary" icon="close" class="modal-button">Cancel</Button>
                 </footer>
             </div>
         </div>
@@ -21,15 +27,24 @@
 
 <script>
 import Icon from '@/components/Icon.vue'
+import Button from '@/components/Button.vue'
+
+interface ModalButton {
+
+}
 
 export default {
     components: {
-        Icon
+        Icon, Button
     },
     props: {
         heading: {
             type: String,
             required: true
+        },
+        buttons: {
+            type: Array,
+            required: false
         }
     }
 }
@@ -48,6 +63,18 @@ export default {
         @apply py-4;
         @apply border-gray-300;
         @apply flex my-auto;
+    }
+    .modal-button {
+        @apply my-1;
+    }
+    .modal-button:first-child {
+        @apply mr-1;
+    }
+    .modal-button:last-child {
+        @apply ml-1;
+    }
+    .modal-button:not(:first-child):not(:last-child) {
+        @apply mx-1;
     }
 }
 </style>
