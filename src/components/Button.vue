@@ -1,8 +1,11 @@
 <template>
-    <button @click="$props.action"
-        class="flex px-3 py-1 font-bold rounded border" :class="buttonClass">
+    <button @click="$props.action" :title="$refs.buttonText.innerHTML"
+        class="flex px-3 py-1 font-bold border" 
+        :class="[buttonClass, $props.icon? 'rounded-full sm:rounded' : 'rounded']">
         <Icon v-if="$props.icon" :id="$props.icon" class="w-6 text-sm"/>
-        <slot/>
+        <p :class="$props.icon? 'hidden sm:block' : ''" ref="buttonText">
+            <slot/>
+        </p>
     </button>
 </template>
 
@@ -10,8 +13,8 @@
 import Icon from '@/components/Icon.vue'
 
 const button_styles = {
-    'primary': ['bg-yellow-500 border-yellow-600 hover:bg-yellow-400 hover:border-yellow-500 active:bg-yellow-700'],
-    'secondary': ['bg-white border-gray-300 hover:bg-gray-100 hover:border-gray-200 active:bg-gray-300']
+    'primary': 'bg-yellow-500 border-yellow-600 hover:bg-yellow-400 hover:border-yellow-500 active:bg-yellow-700',
+    'secondary': 'bg-white border-gray-300 hover:bg-gray-100 hover:border-gray-200 active:bg-gray-300'
 }
 
 export default {
@@ -29,7 +32,7 @@ export default {
             required: false
         }
     },
-    setup(props) { 
+    setup(props) {
         return { 
             buttonClass: button_styles[props.type]
         }
