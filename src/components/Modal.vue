@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import {reactive, onMounted, onUnmounted, toRefs} from 'vue' 
+import {reactive, onMounted, onUnmounted, toRefs, watch} from 'vue' 
 import Icon from '@/components/Icon.vue'
 import Button from '@/components/Button.vue'
 
@@ -62,13 +62,18 @@ export default {
             modalSize.width = window.innerWidth * 0.9
         }
         onMounted(()=> {
-            console.log('mounted')
             resize()
             window.addEventListener('resize', resize)
         })
         onUnmounted(()=> {
-            console.log('unmounted')
             window.removeEventListener('resize', resize)
+        })
+        watch(()=> props.isOpen, ()=> {
+            const bodyClassList = document.querySelector('body').classList 
+            if (props.isOpen)
+                bodyClassList.add('overflow-hidden')
+            else
+                bodyClassList.remove('overflow-hidden')
         })
 
         return {
