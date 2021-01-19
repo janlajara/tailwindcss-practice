@@ -1,14 +1,16 @@
 <template>
     <teleport to="body">
-        <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-30">
-            <div class="modal relative ">
+        <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-30"
+            v-show="$props.isOpen">
+            <div class="modal relative">
                 <header class="modal-header border-b">
                     <h1 class="flex-grow">{{$props.heading}}</h1>
                     <button>
-                        <Icon id="close" />
+                        <Icon id="close" @click="close"/>
                     </button>
                 </header>
-                <div class="modal-body pb-6 pb-12 h-96 overflow-y-auto">
+                <div class="modal-body pb-6 pb-12 overflow-y-auto" 
+                    :style="{height: height + 'px'}">
                     <slot/>
                 </div>
                 <footer class="modal-footer border-t justify-end flex-wrap">
@@ -18,7 +20,12 @@
                         class="modal-button">
                         {{button.text}}
                     </Button>
-                    <Button type="secondary" icon="close" class="modal-button">Cancel</Button>
+                    <Button type="secondary" 
+                        icon="close" 
+                        class="modal-button"
+                        :action="close">
+                        Cancel
+                    </Button>
                 </footer>
             </div>
         </div>
@@ -26,18 +33,17 @@
 </template>
 
 <script>
+import {reactive, onMounted, onUnmounted, toRefs} from 'vue' 
 import Icon from '@/components/Icon.vue'
 import Button from '@/components/Button.vue'
-
-interface ModalButton {
-
-}
 
 export default {
     components: {
         Icon, Button
     },
+    emits: ['toggle'],
     props: {
+        isOpen: Boolean,
         heading: {
             type: String,
             required: true
@@ -45,6 +51,29 @@ export default {
         buttons: {
             type: Array,
             required: false
+        }
+    }, 
+    setup(props, {emit}) {
+        const modalSize = reactive({
+            height: 0, width: 0
+        })
+        const resize = () => {
+            modalSize.height = window.innerHeight * 0.5
+            modalSize.width = window.innerWidth * 0.9
+        }
+        onMounted(()=> {
+            console.log('mounted')
+            resize()
+            window.addEventListener('resize', resize)
+        })
+        onUnmounted(()=> {
+            console.log('unmounted')
+            window.removeEventListener('resize', resize)
+        })
+
+        return {
+            ...toRefs(modalSize),
+            close: ()=> emit('toggle', false)
         }
     }
 }
