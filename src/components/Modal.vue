@@ -1,34 +1,36 @@
 <template>
     <teleport to="body">
-        <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-30"
-            v-show="$props.isOpen">
-            <div class="modal relative">
-                <header class="modal-header border-b">
-                    <h1 class="flex-grow">{{$props.heading}}</h1>
-                    <button>
-                        <Icon id="close" @click="close"/>
-                    </button>
-                </header>
-                <div class="modal-body pb-6 pb-12 overflow-y-auto" 
-                    :style="{height: height + 'px'}">
-                    <slot/>
+        <transition name="slide-fade">
+            <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-30"
+                v-show="$props.isOpen">
+                <div class="modal relative">
+                    <header class="modal-header border-b">
+                        <h1 class="flex-grow">{{$props.heading}}</h1>
+                        <button>
+                            <Icon id="close" @click="close"/>
+                        </button>
+                    </header>
+                    <div class="modal-body pb-6 pb-12 overflow-y-auto" 
+                        :style="{height: height + 'px'}">
+                        <slot/>
+                    </div>
+                    <footer class="modal-footer border-t justify-end flex-wrap">
+                        <Button v-for="(button, index) in $props.buttons" 
+                            :key="index" :type="button.type" 
+                            :icon="button.icon" :action="button.action" 
+                            class="modal-button">
+                            {{button.text}}
+                        </Button>
+                        <Button type="secondary" 
+                            icon="close" 
+                            class="modal-button"
+                            :action="close">
+                            Cancel
+                        </Button>
+                    </footer>
                 </div>
-                <footer class="modal-footer border-t justify-end flex-wrap">
-                    <Button v-for="(button, index) in $props.buttons" 
-                        :key="index" :type="button.type" 
-                        :icon="button.icon" :action="button.action" 
-                        class="modal-button">
-                        {{button.text}}
-                    </Button>
-                    <Button type="secondary" 
-                        icon="close" 
-                        class="modal-button"
-                        :action="close">
-                        Cancel
-                    </Button>
-                </footer>
             </div>
-        </div>
+        </transition>
     </teleport>
 </template>
 
@@ -109,6 +111,19 @@ export default {
     }
     .modal-button:not(:first-child):not(:last-child) {
         @apply mx-1;
+    }
+    .slide-fade-enter-from,
+    .slide-fade-leave-to {
+        opacity: 0;
+    }
+    .slide-fade-enter-from .modal, .slide-fade-leave-to .modal {
+        transform: translateY(-40px);
+    }
+    .slide-fade-enter-active,
+    .slide-fade-leave-active,
+    .slide-fade-enter-from .modal, 
+    .slide-fade-leave-to .modal {
+        transition: all 0.2s ease-out;
     }
 }
 </style>
