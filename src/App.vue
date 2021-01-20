@@ -60,16 +60,8 @@ export default {
     @apply h-full;
   }
 
-  body, div#app {
-    /*@apply relative;*/
-  }
-
   h1 {
-    @apply text-3xl font-extrabold;
-  }
-
-  h2 {
-    /*@apply text-gray-600 text-xl font-semibold;*/
+    @apply text-2xl sm:text-3xl font-extrabold;
   }
 }
 
