@@ -16,10 +16,20 @@
                 <Button type="primary" @click="()=> toggle(true)">Open modal</Button>
                 <Modal heading="A Sample Modal" :is-open="modalIsOpen" @toggle="toggle"
                     :buttons="[
-                        {type: 'primary', icon: 'save', text: 'Save'},
-                        {type: 'secondary', icon: 'delete', text: 'Delete'}
+                        {type: 'primary', icon: 'save', text: 'Save', 
+                            action: ()=>{showToast('success', 'Record saved.')}},
+                        {type: 'secondary', icon: 'delete', text: 'Delete', 
+                            action: ()=>{showToast('info', 'Record deleted.'); modalIsOpen=false}}
                     ]">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc sed velit dignissim sodales ut eu sem integer vitae. Id aliquet lectus proin nibh nisl condimentum. Fringilla urna porttitor rhoncus dolor purus. Nam aliquam sem et tortor. Nisl vel pretium lectus quam id. Cras pulvinar mattis nunc sed. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Tristique magna sit amet purus. Fermentum et sollicitudin ac orci phasellus egestas tellus. Erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Felis eget nunc lobortis mattis aliquam faucibus. Tincidunt eget nullam non nisi est sit amet facilisis. Mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Vitae proin sagittis nisl rhoncus mattis rhoncus urna neque. Eget nunc scelerisque viverra mauris in aliquam sem fringilla ut. Nec nam aliquam sem et tortor consequat id. Commodo nulla facilisi nullam vehicula ipsum a. Elementum tempus egestas sed sed. Faucibus purus in massa tempor nec feugiat nisl pretium fusce.
+                    <Section heading="Some Fields" description="Here are some fields that you can type on.">
+                        <div class="grid lg:grid-cols-2 inputs">
+                            <InputText name="Username" type="text" placeholder="abcd1234"/>
+                            <InputText name="Price" type="number" prefix="PHP"/>
+                            <InputText name="Quantity" type="number" postfix="pieces"/>
+                            <InputText name="Website" type="text" prefix="www." postfix=".com"/>
+                            <InputTextarea name="Description"/>
+                        </div>
+                    </Section>
                 </Modal>
             </div>
         </Section>
@@ -28,20 +38,23 @@
 
 <script>
 import {ref} from 'vue'
+import {useToast} from 'vue-toastification'
 import Page from '@/components/Page.vue'
 import Section from '@/components/Section.vue'
 import Button from '@/components/Button.vue'
 import Modal from '@/components/Modal.vue'
-import {useToast} from 'vue-toastification'
+import InputText from '@/components/InputText.vue'
+import InputTextarea from '@/components/InputTextarea.vue'
 
 export default {
     components: {
-        Page, Section, Button, Modal
+        Page, Section, Button, Modal,
+        InputText, InputTextarea
     },
     setup(){
         const toast = useToast()
-        const showToast = (type='default')=> {
-            return toast("Bulaga!", {type})
+        const showToast = (type='default', message='Bulaga!')=> {
+            return toast(message, {type})
         }
         const modalIsOpen = ref(false)
         const toggle = (value) => {
@@ -62,6 +75,12 @@ export default {
     }
     .buttons-group {
         @apply flex flex-grow flex-wrap justify-center my-auto;
+    }
+    .inputs > *:nth-child(odd) {
+        @apply lg:mr-2;
+    }
+    .inputs > *:nth-child(even) {
+        @apply lg:ml-2;
     }
 }
 </style>
