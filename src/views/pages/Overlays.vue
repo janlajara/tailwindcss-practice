@@ -1,5 +1,5 @@
 <template>
-    <Page title="Notifications">
+    <Page title="Overlays">
         <Section heading="Toasts" description="Click any of the buttons to trigger the toasts."
             class="block md:flex">
             <div class="buttons-group">
@@ -61,10 +61,8 @@ export default {
             modalIsOpen.value = value
         }
         const deleteRecord = ()=> {
-            if (window.confirm('This deletes the record. Click OK to proceed.')) {
-                showToast('info', 'Record deleted.')
-                toggle(false)
-            }
+            showToast('info', 'Record deleted.')
+            toggle(false)
         }
 
         return {

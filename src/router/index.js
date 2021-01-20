@@ -33,9 +33,9 @@ const routes = [
     meta: {group: 'Components'}
   },
   {
-    path: '/components/notifications',
-    name: 'Notifications',
-    component: ()=>import('../views/pages/Notifications.vue'),
+    path: '/components/overlays',
+    name: 'Overlays',
+    component: ()=>import('../views/pages/Overlays.vue'),
     meta: {group: 'Components'}
   },
   {
