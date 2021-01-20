@@ -19,7 +19,7 @@
                         {type: 'primary', icon: 'save', text: 'Save', 
                             action: ()=>{showToast('success', 'Record saved.')}},
                         {type: 'secondary', icon: 'delete', text: 'Delete', 
-                            action: ()=>{showToast('info', 'Record deleted.'); modalIsOpen=false}}
+                            action: deleteRecord}
                     ]">
                     <Section heading="Some Fields" description="Here are some fields that you can type on.">
                         <div class="grid lg:grid-cols-2 inputs">
@@ -60,9 +60,15 @@ export default {
         const toggle = (value) => {
             modalIsOpen.value = value
         }
+        const deleteRecord = ()=> {
+            if (window.confirm('This deletes the record. Click OK to proceed.')) {
+                showToast('info', 'Record deleted.')
+                toggle(false)
+            }
+        }
 
         return {
-            showToast, modalIsOpen, toggle
+            showToast, modalIsOpen, toggle, deleteRecord
         }
     }
 }
