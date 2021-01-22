@@ -36,16 +36,9 @@ export default {
         },
         rows: Array
     },
-    setup(props, {slots}){
+    setup(props){
         const columnCount = computed(()=> props.headers.length)
         const tableRows = ref([])
-
-        if (slots.default) {
-            const slotRows = slots.default()[0].children
-                .filter(x => x.type.name == 'Row')
-                .map( row => row )
-            console.log(slotRows)
-        } 
 
         return {
             columnCount,
