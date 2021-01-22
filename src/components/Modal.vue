@@ -2,7 +2,7 @@
     <teleport to="body">
         <transition name="slide-fade">
             <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-30"
-                v-show="$props.isOpen">
+                v-if="$props.isOpen">
                 <div class="modal relative">
                     <header class="modal-header border-b">
                         <h1 class="flex-grow">{{$props.heading}}</h1>
@@ -124,7 +124,7 @@ export default {
     .slide-fade-leave-active,
     .slide-fade-enter-from .modal, 
     .slide-fade-leave-to .modal {
-        transition: all 0.2s ease-out;
+        transition: all 0.1s ease-out;
     }
 }
 </style>
