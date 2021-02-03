@@ -4,7 +4,7 @@
         class="flex px-3 py-1 font-bold border" 
         :class="[buttonClass, $props.icon? 'rounded-full sm:rounded' : 'rounded']">
         <Icon v-if="$props.icon" :id="$props.icon" class="w-6 text-sm"/>
-        <p :class="$props.icon? 'hidden sm:block' : ''" ref="buttonText">
+        <p class="w-full" :class="$props.icon? 'hidden sm:block' : ''" ref="buttonText">
             <slot/>
         </p>
     </button>
