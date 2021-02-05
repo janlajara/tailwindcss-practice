@@ -15,3 +15,11 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+@layer components {
+  .input-label {
+    @apply text-sm font-medium text-gray-700;
+  }
+}
+</style>

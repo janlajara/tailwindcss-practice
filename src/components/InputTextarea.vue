@@ -14,3 +14,21 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+
+@layer components {
+  .input {
+    @apply mt-2;
+  }
+
+  .input-label {
+    @apply text-sm font-medium text-gray-700;
+  }
+
+  .input-field {
+    @apply w-full border-gray-300 text-sm;
+  }
+}
+
+</style>
