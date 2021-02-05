@@ -2,7 +2,7 @@
     <nav>
         <slot name="logo"/>
         <hr class="mt-3 hidden sm:flex"/>
-        <NavLink :to="{name: 'Dashboard'}"
+        <NavLink :to="{name: 'Home'}"
             icon="home"
             @selected="select" 
             :selected="selected" class="nav-link">
