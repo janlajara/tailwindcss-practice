@@ -41,7 +41,7 @@ const routes = [
   {
     path: '/pages/login',
     name: 'Login',
-    component: Placeholder,
+    component: ()=>import('../views/pages/Login.vue'),
     meta: {group: 'Pages'}
   },
   {
