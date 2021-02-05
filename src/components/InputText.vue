@@ -6,7 +6,7 @@
                 class="inline-flex items-center px-2 bg-gray-50 border border-r-0 border-gray-300 rounded-l-md text-sm">
                 {{$props.prefix}}</span>
             <input :type="$props.type" :placeholder="$props.placeholder"
-                class="input-field"
+                class="input-field" v-model="$props.value"
                 :class="inputBorderStyle"/>
             <span v-if="$props.postfix"
                 class="inline-flex items-center px-2 bg-gray-50 border border-l-0 border-gray-300 rounded-r-md text-sm">
@@ -24,13 +24,15 @@ export default {
         prefix: String,
         postfix: String,
         placeholder: String,
+        value: Object,
         type: {
             type: String,
             required: true,
             validator: (value) => {
-                return ['text', 'number'].indexOf(value) !== -1
+                return ['text', 'number', 'password'].indexOf(value) !== -1
             }
-        }
+        },
+        required: Boolean,
     },
     setup(props) {
         const inputBorderStyle = ref()
