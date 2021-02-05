@@ -3,22 +3,22 @@
         <Section heading="Toasts" description="Click any of the buttons to trigger the toasts."
             class="block md:flex">
             <div class="buttons-group">
-                <Button type="primary" :action="()=>showToast()">Default</Button>
-                <Button type="secondary" :action="()=>showToast('success')">Success</Button>
-                <Button type="secondary" :action="()=>showToast('info')">Info</Button>
-                <Button type="secondary" :action="()=>showToast('warning')">Warning</Button>
-                <Button type="secondary" :action="()=>showToast('error')">Error</Button>
+                <Button color="primary" :action="()=>showToast()">Default</Button>
+                <Button color="secondary" :action="()=>showToast('success')">Success</Button>
+                <Button color="secondary" :action="()=>showToast('info')">Info</Button>
+                <Button color="secondary" :action="()=>showToast('warning')">Warning</Button>
+                <Button color="secondary" :action="()=>showToast('error')">Error</Button>
             </div>
         </Section>
         <Section heading="Modals" description="Click any of the buttons to trigger the modals."
             class="block md:flex">
             <div class="buttons-group">
-                <Button type="primary" @click="()=> toggle(true)">Open modal</Button>
+                <Button color="primary" @click="()=> toggle(true)">Open modal</Button>
                 <Modal heading="A Sample Modal" :is-open="modalIsOpen" @toggle="toggle"
                     :buttons="[
-                        {type: 'primary', icon: 'save', text: 'Save', 
+                        {color: 'primary', icon: 'save', text: 'Save', 
                             action: ()=>{showToast('success', 'Record saved.')}},
-                        {type: 'secondary', icon: 'delete', text: 'Delete', 
+                        {color: 'secondary', icon: 'delete', text: 'Delete', 
                             action: deleteRecord}
                     ]">
                     <Section heading="Some Fields" description="Here are some fields that you can type on.">

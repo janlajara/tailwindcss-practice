@@ -17,11 +17,12 @@
                     <footer class="modal-footer border-t justify-end flex-wrap">
                         <Button v-for="(button, index) in $props.buttons" 
                             :key="index" :type="button.type" 
+                            :color="button.color"
                             :icon="button.icon" :action="button.action" 
                             class="modal-button">
                             {{button.text}}
                         </Button>
-                        <Button type="secondary" 
+                        <Button color="secondary" 
                             icon="close" 
                             class="modal-button"
                             :action="close">

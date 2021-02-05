@@ -5,19 +5,19 @@
                 description="Here are the samples of regular buttons in various styles."
                 class="sm:flex">
                 <div class="buttons-group flex flex-grow flex-wrap justify-center my-auto">
-                    <Button type="primary">Primary</Button>
-                    <Button type="primary">Orange Button</Button>
-                    <Button type="secondary">Secondary</Button>
-                    <Button type="secondary">White Button</Button>
+                    <Button color="primary">Primary</Button>
+                    <Button color="primary">Orange Button</Button>
+                    <Button color="secondary">Secondary</Button>
+                    <Button color="secondary">White Button</Button>
                 </div>
             </Section>
             <Section heading="Buttons with Icon"
                 description="Here are the samples of buttons with icon in various styles."
                 class="sm:flex">
                 <div class="buttons-group flex flex-grow flex-wrap justify-center my-auto">
-                    <Button type="primary" icon="restaurant">Kagat!</Button>
-                    <Button type="secondary" icon="download">Download</Button>
-                    <Button type="secondary" icon="close">Delete</Button>
+                    <Button color="primary" icon="restaurant">Kagat!</Button>
+                    <Button color="secondary" icon="download">Download</Button>
+                    <Button color="secondary" icon="close">Delete</Button>
                 </div>
             </Section>
         </Page>

@@ -1,5 +1,5 @@
 <template>
-    <button @click="$props.action" 
+    <button @click="$props.action"  :type="$props.type"
         :title="$refs.buttonText? $refs.buttonText.innerHTML : ''"
         class="flex px-3 py-1 font-bold border" 
         :class="[buttonClass, $props.icon? 'rounded-full sm:rounded' : 'rounded']">
@@ -24,18 +24,24 @@ export default {
     },
     props: {
         icon: String,
-        type: String,
-            validator: (value) => {
-                return ['primary', 'secondary'].indexOf(value) !== -1
-            },
+        type: {
+            type: String,
+            validator: (value) =>
+                ['button', 'submit'].indexOf(value) !== -1
+        },
+        color: {
+            type: String,
+            validator: (value) => 
+                ['primary', 'secondary'].indexOf(value) !== -1
+        },
         action: {
             type: Function,
             required: false
         }
     },
-    setup(props) {
+    setup(props) { 
         return { 
-            buttonClass: button_styles[props.type]
+            buttonClass: button_styles[props.color]
         }
     }
 }
