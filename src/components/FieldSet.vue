@@ -12,3 +12,15 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+@layer components {
+  .input {
+    @apply mt-2;
+  }
+
+  .input-label {
+    @apply text-sm font-medium;
+  }
+}
+</style>

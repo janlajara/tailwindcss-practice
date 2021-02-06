@@ -1,8 +1,9 @@
 <template>
     <div>
         <Page title="Forms">
-            <Section heading="Some Fields" description="Here are some fields that you can type on.">
-                <div class="grid lg:grid-cols-2 inputs">
+            <Section heading="Some Fields" 
+                description="Here are some fields that you can type on.">
+                <div class="grid grid-cols-1 lg:grid-cols-2 inputs">
                     <InputText name="Username" type="text" placeholder="abcd1234"/>
                     <InputText name="Price" type="number" prefix="PHP"/>
                     <InputText name="Quantity" type="number" postfix="pieces"/>
@@ -10,7 +11,7 @@
                     <InputTextarea name="Description"/>
                 </div>
             </Section>
-            <Section heading="Files">
+            <Section heading="Others">
                 <InputSelect name="City" class="md:w-1/3"
                     :options="[
                         {label: 'Manila', value: 'MNL'},

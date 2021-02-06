@@ -62,7 +62,7 @@ export default {
   }
 
   .input-field {
-    @apply w-full border-gray-300 text-sm;
+    @apply flex-grow border-gray-300 text-sm;
   }
 }
 </style>
