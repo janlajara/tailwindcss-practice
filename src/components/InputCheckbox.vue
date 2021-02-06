@@ -6,7 +6,7 @@
         </div>
         <div v-if="$props.label">
             <label class="input-label">{{$props.label}}</label>
-            <p v-if="$slots.default" class="text-sm font-medium text-justify text-gray-600">
+            <p v-if="$slots.default" class="text-sm font-medium text-justify">
                 <slot/>
             </p>
         </div>
@@ -26,7 +26,7 @@ export default {
 <style scoped>
 @layer components {
   .input-label {
-    @apply text-sm font-medium text-gray-700;
+    @apply text-sm font-medium;
   }
 }
 </style>

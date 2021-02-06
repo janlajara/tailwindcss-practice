@@ -30,7 +30,7 @@ export default {
   }
 
   .input-label {
-    @apply text-sm font-medium text-gray-700;
+    @apply text-sm font-medium;
   }
 
   .input-field {

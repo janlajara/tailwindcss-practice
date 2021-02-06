@@ -4,7 +4,7 @@
             <thead class="hidden lg:table-header-group">
                 <Row class="bg-gray-100">
                     <th v-for="(header, key) in $props.headers" :key="key" 
-                        class="px-3 py-3 sm:px-6 text-left text-xs text-gray-700">{{header}}</th>
+                        class="px-3 py-3 sm:px-6 text-left text-xs">{{header}}</th>
                 </Row>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">

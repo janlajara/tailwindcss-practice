@@ -8,7 +8,7 @@
                 @input="(e)=>credentials.username=e.target.value"/>
             <InputText name="Password" type="password" :value="credentials.password"
                 @input="(e)=>credentials.password=e.target.value"/>
-            <p class="text-gray-500 text-sm text-right">
+            <p class="text-sm text-right">
                 Credentials: user / user123</p>
             <Button class="mt-6 w-full" color="primary"
                 @click="signIn">
@@ -45,7 +45,7 @@ export default {
         const signIn = ()=> {
             if (credentials.username == 'user' && 
                 credentials.password == 'user123')
-                router.push({name:'Dashboard'})
+                router.push({name:'Home'})
             else
                 message.value = 'Invalid username and/or password.'
                 message.display = true

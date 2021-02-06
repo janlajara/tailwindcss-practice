@@ -13,6 +13,10 @@
     @apply h-full;
   }
 
+  html {
+    @apply text-gray-900;
+  }
+
   h1 {
     @apply text-2xl sm:text-3xl font-extrabold;
   }
