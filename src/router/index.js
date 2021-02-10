@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Admin from '../views/Admin.vue'
+import Admin from '@/views/Admin.vue'
 
 const routes = [
   {
