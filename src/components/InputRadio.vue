@@ -1,7 +1,7 @@
 <template>
     <div class="flex pr-4 mt-2">
         <div class="inline-flex items-center pr-4">
-            <input type="radio" :name="name" :value="$props.option"/>
+            <input type="radio" class="input-field" :name="name" :value="$props.option"/>
         </div>
         <label class="input-label">{{$props.option}}</label>
     </div>
@@ -20,6 +20,10 @@ export default {
 @layer components {
   .input-label {
     @apply text-sm font-medium;
+  }
+
+  .input-field {
+    @apply border-none bg-gray-300;
   }
 }
 </style>

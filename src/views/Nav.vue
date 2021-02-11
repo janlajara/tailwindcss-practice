@@ -1,13 +1,12 @@
 <template>
     <nav>
         <slot name="logo"/>
-        <hr class="mt-3 hidden sm:flex"/>
+        <span class="mt-6 block"/>
         <NavLink :to="{name: 'Home'}"
             icon="home"
             @selected="select" 
             :selected="selected" class="nav-link">
             Home</NavLink>
-        <hr/>
         <NavGroup name="Interface">
             <NavMenu
                 icon="extension"

@@ -6,7 +6,7 @@
       </template>
     </Nav>
     <div class="flex-grow">
-      <Header class="flex h-16 p-4 justify-end border-b border-gray-300 bg-white">  
+      <Header class="flex h-16 p-4 justify-end bg-yellow-500">  
         <Logo class="sm:hidden flex-grow"/>
         <Notifications/>
         <Hamburger :activated="navExpanded" @click="navExpanded = !navExpanded" class="sm:hidden"/>
@@ -57,10 +57,10 @@ export default {
   .nav {
     @apply pl-6 pr-6 pb-3 sm:pb-0;
     @apply absolute top-16 sm:static;
-    @apply bg-white;
-    @apply border-gray-300 border-b sm:border-r; 
+    @apply bg-gray-800;
     @apply w-full sm:w-60 md:w-64 lg:w-72 sm:pt-6;
     @apply overflow-hidden;
+    @apply text-white;
   }
 }
 </style>

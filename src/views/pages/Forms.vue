@@ -57,11 +57,11 @@ export default {
 <style scoped>
 @layer components {
     .inputs > *:nth-child(odd) {
-        @apply lg:mr-2;
+        @apply lg:mr-4;
     }
 
     .inputs > *:nth-child(even) {
-        @apply lg:ml-2;
+        @apply lg:ml-4;
     }
 }
 </style>

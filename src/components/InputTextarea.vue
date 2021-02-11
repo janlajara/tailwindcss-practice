@@ -2,7 +2,7 @@
     <div class="input">
         <label class="input-label">{{$props.name}}</label>
         <div class="rounded-md shadow-sm">
-            <textarea class="rounded input-field"></textarea>
+            <textarea class="rounded input-field w-full"></textarea>
         </div>
     </div>
 </template>
@@ -27,7 +27,7 @@ export default {
   }
 
   .input-field {
-    @apply w-full border-gray-300 text-sm;
+    @apply border-none bg-gray-100 text-sm;
   }
 }
 

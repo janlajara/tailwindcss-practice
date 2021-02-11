@@ -3,13 +3,13 @@
         <label class="input-label">{{$props.name}}</label>
         <div class="flex rounded-md shadow-sm">
             <span v-if="$props.prefix"
-                class="inline-flex items-center px-2 bg-gray-50 border border-r-0 border-gray-300 rounded-l-md text-sm">
+                class="input-field-part rounded-l-md">
                 {{$props.prefix}}</span>
             <input :type="$props.type" :placeholder="$props.placeholder"
-                class="input-field" v-model="$props.value"
+                class="input-field flex-grow" v-model="$props.value"
                 :class="inputBorderStyle"/>
             <span v-if="$props.postfix"
-                class="inline-flex items-center px-2 bg-gray-50 border border-l-0 border-gray-300 rounded-r-md text-sm">
+                class="input-field-part rounded-r-md">
                 {{$props.postfix}}</span>
         </div>
     </div>
@@ -62,7 +62,15 @@ export default {
   }
 
   .input-field {
-    @apply flex-grow border-gray-300 text-sm;
+    @apply border-none text-sm;
+  }
+
+  .input-field-part {
+    @apply inline-flex items-center px-2
+  }
+
+  .input-field, .input-field-part {
+    @apply bg-gray-100 text-sm;
   }
 }
 </style>
