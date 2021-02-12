@@ -4,7 +4,7 @@
             <div class="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-30"
                 v-if="$props.isOpen">
                 <div class="modal relative">
-                    <header class="modal-header border-b">
+                    <header class="modal-header">
                         <h1 class="flex-grow">{{$props.heading}}</h1>
                         <button>
                             <Icon id="close" @click="close"/>
@@ -14,7 +14,7 @@
                         :style="{height: height + 'px'}">
                         <slot/>
                     </div>
-                    <footer class="modal-footer border-t justify-end flex-wrap">
+                    <footer class="modal-footer border-gray-300 border-t justify-end flex-wrap">
                         <Button v-for="(button, index) in $props.buttons" 
                             :key="index" :type="button.type" 
                             :color="button.color"
@@ -93,12 +93,15 @@ export default {
         @apply w-11/12 sm:w-4/5 md:w-3/5;
         @apply rounded bg-white;
     }
+    .modal-header {
+        @apply bg-yellow-400;
+        @apply rounded-t;
+    }
     .modal-body, .modal-footer, .modal-header {
        @apply w-full px-6;
     }
     .modal-footer, .modal-header {
         @apply py-4;
-        @apply border-gray-300;
         @apply flex my-auto;
     }
     .modal-button {
