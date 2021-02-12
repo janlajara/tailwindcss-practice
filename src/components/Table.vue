@@ -1,8 +1,8 @@
 <template>
-    <div class="my-4 border border-gray-300 rounded-md overflow-hidden">
-        <table class="divide-y divide-gray-200 table-auto">
+    <div class="my-4 rounded-md overflow-hidden">
+        <table class="table-auto">
             <thead class="hidden lg:table-header-group">
-                <Row class="bg-gray-100">
+                <Row class="bg-yellow-200">
                     <th v-for="(header, key) in $props.headers" :key="key" 
                         class="px-3 py-3 sm:px-6 text-left text-xs">{{header}}</th>
                 </Row>

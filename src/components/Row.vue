@@ -1,5 +1,5 @@
 <template>
-    <tr class="flex flex-wrap lg:table-row row hover:bg-gray-50">
+    <tr class="flex flex-wrap lg:table-row row bg-gray-50">
         <slot/>
     </tr>
 </template>
