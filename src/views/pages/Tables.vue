@@ -2,6 +2,7 @@
     <div>
         <Page title="Tables">
             <p>These tables are responsive. Try resizing your window to test.</p>
+            <br/><hr/>
             <Section heading="Regular" description="Here is an example of a regular table.">
                 <Table 
                     :headers="['Last name', 'First name', 'Middle name', 'Age', 'Profile']"
