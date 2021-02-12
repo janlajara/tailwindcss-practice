@@ -63,6 +63,7 @@ export default {
 
   .input-field {
     @apply border-none text-sm;
+    @apply focus:outline-none;
   }
 
   .input-field-part {
@@ -70,7 +71,7 @@ export default {
   }
 
   .input-field, .input-field-part {
-    @apply bg-gray-100 text-sm;
+    @apply bg-gray-200 text-sm;
   }
 }
 </style>

@@ -27,7 +27,7 @@ export default {
   }
 
   .input-field {
-    @apply border-none bg-gray-100 text-sm;
+    @apply border-none bg-gray-200 text-sm;
   }
 }
 

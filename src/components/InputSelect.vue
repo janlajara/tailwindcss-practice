@@ -34,7 +34,7 @@ export default {
   }
 
   .input-field {
-    @apply w-full border-none bg-gray-100 text-sm;
+    @apply w-full border-none bg-gray-200 text-sm;
   }
 }
 </style>
