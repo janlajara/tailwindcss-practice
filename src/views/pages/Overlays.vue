@@ -10,7 +10,7 @@
                 <Button color="secondary" :action="()=>showToast('error')">Error</Button>
             </div>
         </Section>
-        <Section heading="Modals" description="Click any of the buttons to trigger the modals."
+        <Section heading="Modals" description="Click the button to trigger the modal."
             class="block md:flex">
             <div class="buttons-group">
                 <Button color="primary" @click="()=> toggle(true)">Open modal</Button>
