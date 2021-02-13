@@ -6,7 +6,7 @@
                 class="input-field-part rounded-l-md">
                 {{$props.prefix}}</span>
             <input :type="$props.type" :placeholder="$props.placeholder"
-                class="input-field flex-grow" v-model="$props.value"
+                class="input-field flex-grow" :value="$props.value"
                 :class="inputBorderStyle"/>
             <span v-if="$props.postfix"
                 class="input-field-part rounded-r-md">
@@ -24,7 +24,7 @@ export default {
         prefix: String,
         postfix: String,
         placeholder: String,
-        value: Object,
+        value: String,
         type: {
             type: String,
             required: true,
