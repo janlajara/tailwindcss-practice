@@ -1,6 +1,6 @@
 <template>
-    <div class="fixed inset-0 bg-white flex items-center justify-center">
-        <div class="mx-8 py-4 lg:mx-16 md:py-6">
+    <div class="fixed inset-0 bg-gray-800 flex items-center justify-center">
+        <div class="p-4 md:p-10 bg-white rounded">
             <span class="material-icons text-5xl text-yellow-500 flex justify-center mb-4">
                 tapas</span>
             <h1 class="mb-6">Sign in to your account</h1>
