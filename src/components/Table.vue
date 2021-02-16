@@ -2,7 +2,7 @@
     <div class="my-4 rounded-md overflow-hidden">
         <table class="table-auto">
             <thead class="hidden lg:table-header-group">
-                <Row class="bg-yellow-200">
+                <Row class="bg-primary-light bg-opacity-50">
                     <th v-for="(header, key) in $props.headers" :key="key" 
                         class="px-3 py-3 sm:px-6 text-left text-xs">{{header}}</th>
                 </Row>

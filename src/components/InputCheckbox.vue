@@ -31,7 +31,7 @@ export default {
   }
 
   .input-checkbox {
-    @apply border-none rounded bg-gray-300 text-yellow-500;
+    @apply border-none rounded bg-gray-300 text-primary;
   }
 
   .input-checkbox:checked {

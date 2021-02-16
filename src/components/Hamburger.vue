@@ -1,5 +1,5 @@
 <template>
-    <button :class="$props.activated? 'bg-gray-400 bg-opacity-50 rounded' : ''">
+    <button :class="$props.activated? 'bg-secondary-dark bg-opacity-50 rounded' : ''">
         <Icon id="menu" class="w-10" :class="$props.activated? 'text-white': ''"/>
     </button>
 </template>

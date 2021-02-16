@@ -14,8 +14,8 @@
 import Icon from '@/components/Icon.vue'
 
 const button_styles = {
-    'primary': 'bg-yellow-500 hover:bg-yellow-400 active:bg-yellow-700',
-    'secondary': 'bg-gray-300 hover:bg-gray-200 active:bg-gray-400'
+    'primary': 'bg-primary hover:bg-primary-light active:bg-primary-dark',
+    'secondary': 'bg-secondary hover:bg-secondary-ligh active:bg-secondary-dark'
 }
 
 export default {

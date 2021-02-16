@@ -3,6 +3,18 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        primary: {
+          light: '#FBBF24',
+          DEFAULT: '#F59E0B',
+          dark: '#B45309'
+        },
+        secondary: {
+          light: '#E5E7EB',
+          DEFAULT: '#D1D5DB',
+          dark: '#9CA3AF'
+        }
+      },
       transitionProperty: {
         'height': 'height'
       },

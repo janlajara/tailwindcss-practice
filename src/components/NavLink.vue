@@ -1,9 +1,9 @@
 <template>
     <div class="flex items-center">
         <Icon :id="$props.icon" class="pr-4 w-8 text-gray-400"
-            :class="isSelected? 'text-yellow-500' : ''"/>
+            :class="isSelected? 'text-primary' : ''"/>
         <router-link v-bind="$props" class="w-full" @click="emitSelected"
-            :class="isSelected? 'text-yellow-500 font-bold' : ''">
+            :class="isSelected? 'text-primary font-bold' : ''">
             <slot/>
         </router-link>  
     </div>

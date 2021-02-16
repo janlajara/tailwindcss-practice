@@ -3,9 +3,9 @@
         <div @click.prevent="$emit('selected', $props.metaGroup)"
             class="flex items-center cursor-pointer">
             <Icon :id="$props.icon" class="pr-4 w-8" 
-                :class="collapsed? 'text-yellow-500' : 'text-gray-400'"/>
+                :class="collapsed? 'text-primary' : 'text-gray-400'"/>
             <a href="#" class="flex-grow" 
-                :class="collapsed? 'text-yellow-500 font-bold' : ''">
+                :class="collapsed? 'text-primary font-bold' : ''">
                 <slot/>
             </a>
             <Icon id="expand_more" class="transform text-gray-400" 
@@ -15,7 +15,7 @@
             class="flex flex-col overflow-hidden transition-height duration-100 ease-out"
             :style="height? {height: `${collapsed? height:0}px`}: {}" >
             <NavLink :to="{name: route.name}" v-for="(route, i) in group" :key="i"
-                class="pt-3 text-sm" :class="$route.name == route.name? 'text-yellow-500' : ''">
+                class="pt-3 text-sm" :class="$route.name == route.name? 'text-primary' : ''">
                 {{route.name}}
             </NavLink>
         </div>

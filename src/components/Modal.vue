@@ -94,7 +94,7 @@ export default {
         @apply rounded bg-white;
     }
     .modal-header {
-        @apply bg-yellow-400;
+        @apply bg-primary-light;
         @apply rounded-t;
     }
     .modal-body, .modal-footer, .modal-header {

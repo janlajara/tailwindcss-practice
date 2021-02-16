@@ -4,12 +4,13 @@
             <li v-for="(tab, index) in tabs" :key="index"
                 @click="selectTab(index)"
                 class="tab cursor-pointer" 
-                :class="index === selectedIndex? 'text-yellow-600 border-yellow-400 border-b-4' : ''">
+                :class="index === selectedIndex? 
+                    'text-primary border-primary font-bold border-b-4' : ''">
                 {{tab.props.title}}
             </li>
         </ul>
 
-        <div class="border-yellow-400 border-b-4 sm:hidden my-4">
+        <div class="border-primary border-b-4 sm:hidden my-4">
             <select v-model="selectedIndex" 
                 class="w-full border-gray-300 border-b-0 pl-0">
                 <option v-for="(tab, index) in tabs" :key="index" :value="index">

@@ -23,7 +23,7 @@ export default {
   }
 
   .input-field {
-    @apply border-none bg-gray-300 text-yellow-500;
+    @apply border-none bg-gray-300 text-primary;
   }
 
   .input-field:checked {
