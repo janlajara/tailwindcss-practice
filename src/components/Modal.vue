@@ -61,7 +61,7 @@ export default {
             height: 0, width: 0
         })
         const resize = () => {
-            modalSize.height = window.innerHeight * 0.5
+            modalSize.height = window.innerHeight * 0.6
             modalSize.width = window.innerWidth * 0.9
         }
         onMounted(()=> {
@@ -94,7 +94,7 @@ export default {
         @apply rounded bg-white;
     }
     .modal-header {
-        @apply bg-primary-light;
+        @apply bg-primary;
         @apply rounded-t;
     }
     .modal-body, .modal-footer, .modal-header {

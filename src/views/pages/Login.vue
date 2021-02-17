@@ -1,7 +1,7 @@
 <template>
     <div class="fixed inset-0 md:bg-gray-800 flex items-center justify-center">
         <div class="p-4 md:p-10 bg-white rounded">
-            <span class="material-icons text-5xl text-yellow-500 flex justify-center mb-4">
+            <span class="material-icons text-5xl text-primary flex justify-center mb-4">
                 tapas</span>
             <h1 class="mb-6">Sign in to your account</h1>
             <InputText name="Username" type="text" :value="credentials.username" 

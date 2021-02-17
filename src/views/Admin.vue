@@ -6,12 +6,12 @@
       </template>
     </Nav>
     <div class="flex-grow">
-      <Header class="flex h-16 p-4 justify-end bg-yellow-500">  
+      <Header class="flex h-16 p-4 justify-end bg-primary">  
         <Logo class="sm:hidden flex-grow"/>
         <Notifications/>
         <Hamburger :activated="navExpanded" @click="navExpanded = !navExpanded" class="sm:hidden"/>
       </Header>
-      <Body>
+      <Body style="min-height: 80vh">
       </Body>
       <Footer class="w-full"/>
     </div>
